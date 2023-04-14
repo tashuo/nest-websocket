@@ -23,50 +23,37 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
+A nest websocket example with auth.
+
+实现了websocket连接鉴权、心跳保活、私聊和系统主动推送通知等逻辑
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
 ```bash
-$ npm install
+# install
+$ pnpm up -latest
+
+# .env
+$ cp .env.example .env # modify the config with yours
+
+# run migration
+$ pnpm typeorm:run-migrations
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ pnpm start
 
 # watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ pnpm start:dev
 ```
 
 ## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+todo
 
 ## License
 
