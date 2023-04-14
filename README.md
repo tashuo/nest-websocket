@@ -51,8 +51,9 @@ $ pnpm start:dev
 ```
 
 ## Test
-1. login to get jwt
+### login to get jwt
 *the test users Jim and John are auto generated on nest start, look at [OnApplicationBootstrap](https://github.com/tashuo/nest-websocket/blob/master/src/modules/user/user.module.ts)*
+
 ```bash
 $ curl -X POST \
   '127.0.0.1:3000/user/login' \
@@ -71,27 +72,30 @@ $ curl -X POST \
 }'
 ```
 
-2. test with Postman
-  1. connect to ws server with jwt token
-  [![ixBr6Q.md.png](https://i.328888.xyz/2023/04/14/ixBr6Q.md.png)](https://imgloc.com/i/ixBr6Q)
+### test with Postman
+#### connect to ws server with jwt token
 
-  2. add chat event listener
-  [![ixBGld.md.png](https://i.328888.xyz/2023/04/14/ixBGld.md.png)](https://imgloc.com/i/ixBGld)
+[![ixBr6Q.md.png](https://i.328888.xyz/2023/04/14/ixBr6Q.md.png)](https://imgloc.com/i/ixBr6Q)
 
-  3. send message directly with ws
-  [![ixBYc5.md.png](https://i.328888.xyz/2023/04/14/ixBYc5.md.png)](https://imgloc.com/i/ixBYc5)
-  [![ixXVGH.md.png](https://i.328888.xyz/2023/04/14/ixXVGH.md.png)](https://imgloc.com/i/ixXVGH)
+#### add chat event listener
+[![ixBGld.md.png](https://i.328888.xyz/2023/04/14/ixBGld.md.png)](https://imgloc.com/i/ixBGld)
 
-  4. send message with http api
-  [![ixXO7d.md.png](https://i.328888.xyz/2023/04/14/ixXO7d.md.png)](https://imgloc.com/i/ixXO7d)
-  [![ixXev5.md.png](https://i.328888.xyz/2023/04/14/ixXev5.md.png)](https://imgloc.com/i/ixXev5)
+#### send message directly with ws
+[![ixBYc5.md.png](https://i.328888.xyz/2023/04/14/ixBYc5.md.png)](https://imgloc.com/i/ixBYc5)
 
-3. test heartbeat
-  1. normal
-  [![ixgprJ.md.png](https://i.328888.xyz/2023/04/14/ixgprJ.md.png)](https://imgloc.com/i/ixgprJ)
+[![ixXVGH.md.png](https://i.328888.xyz/2023/04/14/ixXVGH.md.png)](https://imgloc.com/i/ixXVGH)
 
-  2. timeout
-  [![ixgdDz.md.png](https://i.328888.xyz/2023/04/14/ixgdDz.md.png)](https://imgloc.com/i/ixgdDz)
+#### send message with http api
+[![ixXO7d.md.png](https://i.328888.xyz/2023/04/14/ixXO7d.md.png)](https://imgloc.com/i/ixXO7d)
+
+[![ixXev5.md.png](https://i.328888.xyz/2023/04/14/ixXev5.md.png)](https://imgloc.com/i/ixXev5)
+
+### test heartbeat
+#### normal
+[![ixgprJ.md.png](https://i.328888.xyz/2023/04/14/ixgprJ.md.png)](https://imgloc.com/i/ixgprJ)
+
+#### timeout
+[![ixgdDz.md.png](https://i.328888.xyz/2023/04/14/ixgdDz.md.png)](https://imgloc.com/i/ixgdDz)
 
 ## License
 
