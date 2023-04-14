@@ -27,8 +27,6 @@ A nest websocket example with auth.
 
 实现了websocket连接鉴权、心跳保活、私聊和系统主动推送通知等逻辑
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
 ## Installation
 
 ```bash
@@ -52,8 +50,48 @@ $ pnpm start
 $ pnpm start:dev
 ```
 
-## Support
-todo
+## Test
+1. login to get jwt
+*the test users Jim and John are auto generated on nest start, look at [OnApplicationBootstrap](https://github.com/tashuo/nest-websocket/blob/master/src/modules/user/user.module.ts)*
+```bash
+$ curl -X POST \
+  '127.0.0.1:3000/user/login' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "username": "Jim",
+  "password": "123456"
+}'
+
+$ curl -X POST \
+  '127.0.0.1:3000/user/login' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "username": "John",
+  "password": "123456"
+}'
+```
+
+2. test with Postman
+  1. connect to ws server with jwt token
+  [![ixBr6Q.md.png](https://i.328888.xyz/2023/04/14/ixBr6Q.md.png)](https://imgloc.com/i/ixBr6Q)
+
+  2. add chat event listener
+  [![ixBGld.md.png](https://i.328888.xyz/2023/04/14/ixBGld.md.png)](https://imgloc.com/i/ixBGld)
+
+  3. send message directly with ws
+  [![ixBYc5.md.png](https://i.328888.xyz/2023/04/14/ixBYc5.md.png)](https://imgloc.com/i/ixBYc5)
+  [![ixXVGH.md.png](https://i.328888.xyz/2023/04/14/ixXVGH.md.png)](https://imgloc.com/i/ixXVGH)
+
+  4. send message with http api
+  [![ixXO7d.md.png](https://i.328888.xyz/2023/04/14/ixXO7d.md.png)](https://imgloc.com/i/ixXO7d)
+  [![ixXev5.md.png](https://i.328888.xyz/2023/04/14/ixXev5.md.png)](https://imgloc.com/i/ixXev5)
+
+3. test heartbeat
+  1. normal
+  [![ixgprJ.md.png](https://i.328888.xyz/2023/04/14/ixgprJ.md.png)](https://imgloc.com/i/ixgprJ)
+
+  2. timeout
+  [![ixgdDz.md.png](https://i.328888.xyz/2023/04/14/ixgdDz.md.png)](https://imgloc.com/i/ixgdDz)
 
 ## License
 

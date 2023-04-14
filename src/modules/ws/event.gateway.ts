@@ -21,9 +21,10 @@ import { JwtService } from '@nestjs/jwt';
 import { SocketWithUserData } from './types';
 import { Observable, of } from 'rxjs';
 import { WsService } from './ws.service';
+import { WsAuthGuard } from 'src/common/guards/ws-auth.guard';
 
 @Injectable()
-// @UseGuards(WsAuthGuard)
+@UseGuards(WsAuthGuard)
 @WebSocketGateway(3002, { cors: true, transports: ['websocket'] })
 export class EventGateway
   implements OnGatewayConnection, OnGatewayDisconnect, OnGatewayInit
@@ -74,9 +75,15 @@ export class EventGateway
   }
 
   @SubscribeMessage('chat')
-  chat(@MessageBody() data: any): Observable<WsResponse<number> | any> {
+  chat(
+    @MessageBody() data: any,
+    @ConnectedSocket() client: SocketWithUserData,
+  ): Observable<WsResponse<number> | any> {
     console.log(`send message: ${data.message}`);
-    this.wsService.pushMessageToUser(data.toUserId, 'chat', data.message);
+    this.wsService.pushMessageToUser(data.toUserId, 'chat', {
+      fromUser: client.user.id,
+      content: data.message,
+    });
     return;
   }
 }
