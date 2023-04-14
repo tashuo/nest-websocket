@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug fullstack",
+            "request": "launch",
+            "runtimeArgs": ["run-script", "start:debug"],
+            "autoAttachChildProcesses": true,
+            "console": "integratedTerminal",
+            "runtimeExecutable": "pnpm",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node"
+        }
+    ]
+}
